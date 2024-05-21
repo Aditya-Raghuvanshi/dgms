@@ -6,18 +6,21 @@ const ApprovedByYou = () => {
   const allDetail = useSelector(store=>store.data.allDetails);
   const user = useSelector(store=>store.admin.currentUser);
   let data = [];
+  let driverName=[];
   const userTemp = user.split(" ");
 
   allDetail.map((element)=>{
     const temp= element.currentOfficer.split(" ");
 
-    if(temp[0] === userTemp[0] && temp[1]===userTemp[1])
+    if(temp[0] === userTemp[0] && temp[1]===userTemp[1] && driverName.indexOf(element.nameD)===-1)
     {
+      driverName.push(element.nameD);
       data.push(element);
     }
     return null;
   })
-  //console.log(data);
+  // console.log(allDetail);
+  // console.log(driverName);
   return (
     <div className='flex flex-wrap'>
       {

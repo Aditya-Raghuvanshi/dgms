@@ -11,18 +11,21 @@ const VehiclesDetail = () => {
   //console.log(params.id);
   //const [detailDriver,setDetailDriver] = useState([]);
   const data = [];
+  const driverName=[];
   const words = params.id.split("+");
   //console.log(words,allDetail);
 
   allDetail.map((element)=>{
-    if(element.nameT===words[1] && element.nameV===words[0])
+    if(element.nameT===words[1] && element.nameV===words[0] && driverName.indexOf(element.nameD)===-1)
     {
+      driverName.push(element.nameD);
       data.push(element);
       //console.log(element);
     }
     return null;
   });
-  //console.log(data);
+  // console.log(data);
+  // console.log(driverName);
 
   const handleClick=()=>{
       setSeeDriverMenu(!seeDriverMenu);
@@ -39,7 +42,7 @@ const VehiclesDetail = () => {
 
       <div className="flex">{seeDriverMenu &&
         <div className='h-full w-fit'>
-          <DriverMenu nameT={words[1]} nameV={words[0]}/>
+          <DriverMenu nameT={words[1]} nameV={words[0]} setSeeDriverMenu={setSeeDriverMenu}/>
         </div>}
         <div className='flex'>
         {

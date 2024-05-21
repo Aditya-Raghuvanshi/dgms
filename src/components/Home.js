@@ -46,12 +46,12 @@ const Home = () => {
           <li className='text-xl text-red-600 font-serif ml-4 my-2'>
             2. You can see All the List of Transpoters and corresponding data of vehicles and Drivers in See All Drivers Section.
           </li>
-          <li className='text-xl text-red-600 font-serif ml-4 my-2'>
+          {/* <li className='text-xl text-red-600 font-serif ml-4 my-2'>
             3. If you Want to Add New Transpoter or New Vehicle to the Database please Move in the Order :-<br/>
             a. Add new Transpoter,<br/>
             b. Add new Vehicle,<br/>
             c. Add new Request<br/>
-          </li>
+          </li> */}
           <li className='text-xl text-red-600 font-serif ml-4 my-2'>
             4. If you want to Add new Driver to the Already Present Vehicle then GO to See All Drivers Section.
           </li>
